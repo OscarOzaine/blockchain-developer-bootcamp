@@ -86,7 +86,7 @@ const decorateMyOpenOrder = (order, tokens) => {
   return({
     ...order,
     orderType,
-    orderTypeClass: (orderType === 'buy' ? GREEN : RED)
+    orderTypeClass: (orderType === 'buy' ? GREEN : RED),
   })
 }
 
@@ -113,7 +113,7 @@ const decorateOrder = (order, tokens) => {
     token1Amount: ethers.utils.formatUnits(token1Amount, "ether"),
     token0Amount: ethers.utils.formatUnits(token0Amount, "ether"),
     tokenPrice,
-    formattedTimestamp: moment.unix(order.timestamp).format('h:mm:ssa d MMM D')
+    formattedTimestamp: moment.unix(order.timestamp).format('h:mm:ssa d MMM D'),
   })
 }
 
@@ -260,10 +260,10 @@ export const orderBookSelector = createSelector(
     const buyOrders = get(orders, 'buy', [])
 
     // Sort buy orders by token price
-     orders = {
-        ...orders,
-        buyOrders: buyOrders.sort((a, b) => b.tokenPrice - a.tokenPrice)
-      }
+    orders = {
+      ...orders,
+      buyOrders: buyOrders.sort((a, b) => b.tokenPrice - a.tokenPrice)
+    }
 
     // Fetch sell orders
     const sellOrders = get(orders, 'sell', [])
@@ -271,7 +271,7 @@ export const orderBookSelector = createSelector(
     // Sort sell orders by token price
     orders = {
       ...orders,
-      sellOrders: sellOrders.sort((a, b) => b.tokenPrice - a.tokenPrice)
+      sellOrders: sellOrders.sort((a, b) => b.tokenPrice - a.tokenPrice),
     }
 
     return orders
@@ -295,7 +295,7 @@ const decorateOrderBookOrder = (order, tokens) => {
     ...order,
     orderType,
     orderTypeClass: (orderType === 'buy' ? GREEN : RED),
-    orderFillAction: (orderType === 'buy' ? 'sell' : 'buy')
+    orderFillAction: (orderType === 'buy' ? 'sell' : 'buy'),
   })
 }
 

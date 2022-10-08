@@ -31,7 +31,7 @@ const Balance = () => {
   const withdrawRef = useRef(null)
 
   const tabHandler = (e) => {
-    if(e.target.className !== depositRef.current.className) {
+    if (e.target.className !== depositRef.current.className) {
       e.target.className = 'tab tab--active'
       depositRef.current.className = 'tab'
       setIsDeposit(false)
@@ -75,7 +75,7 @@ const Balance = () => {
   }
 
   useEffect(() => {
-    if(exchange && tokens[0] && tokens[1] && account) {
+    if (exchange && tokens[0] && tokens[1] && account) {
       loadBalances(exchange, tokens, account, dispatch)
     }
   }, [exchange, tokens, account, transferInProgress, dispatch])

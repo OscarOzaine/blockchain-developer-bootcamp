@@ -12,9 +12,9 @@ import { priceChartSelector } from '../store/selectors';
 import Banner from './Banner';
 
 const PriceChart = () => {
-  const account = useSelector(state => state.provider.account)
-  const symbols = useSelector(state => state.tokens.symbols)
-  const priceChart = useSelector(priceChartSelector)
+  const account = useSelector(state => state.provider.account);
+  const symbols = useSelector(state => state.tokens.symbols);
+  const priceChart = useSelector(priceChartSelector);
 
   return (
     <div className="component exchange__chart">
